@@ -1,0 +1,8 @@
+.form {
+    background-image: linear-gradient(#817eff, #7465ff, #6b63fd, #2f58ff, #0033ff);
+    padding: 1rem;
+}
+
+.form-group {
+    margin-bottom: 0.7rem;
+}

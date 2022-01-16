@@ -1,0 +1,25 @@
+.cryptos {
+    display: flex;
+    margin: 2px;
+    padding: 0 2px 0 2px;
+    border: 2px red solid;
+    align-items: center;
+    background-image: linear-gradient(rgb(0, 123, 255), rgb(49, 73, 255), rgb(3, 0, 209), rgb(0, 0, 150));
+}
+
+.cryptos_logo {
+    width: 35px;
+    height: 35px;
+    border: red 1px solid;
+    border-radius: 50%;
+}
+
+.cryptos_op {
+    justify-content: flex-end;
+}
+
+.cryptos_name,
+.cryptos_biyuyos,
+.cryptos_op {
+    width: 100px;
+}

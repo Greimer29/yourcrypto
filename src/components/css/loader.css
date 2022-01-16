@@ -1,0 +1,9 @@
+.loader {
+    background-image: url("../../images/LOADING.gif");
+    background-repeat: none;
+    background-repeat: center;
+    background-size: cover;
+    width: 540px;
+    height: 314px;
+    margin: 0 auto;
+}

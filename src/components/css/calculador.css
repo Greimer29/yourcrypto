@@ -1,0 +1,43 @@
+:root {
+    /*loguito*/
+    --D: 50px;
+}
+
+.container {
+    /* border: red 2px solid; */
+    align-items: center;
+}
+
+.calculador-container {
+    max-width: 920px;
+    padding: 0.5rem;
+    background-color: var(--blue);
+}
+
+.data-container,
+.prices-container {
+    background-color: rgb(0, 80, 252);
+    border-radius: 10px;
+}
+
+.valor-container {
+    padding: 0.5rem;
+    border-radius: 10px;
+    background-color: aliceblue;
+}
+
+input {
+    outline: none;
+    max-width: 12rem;
+    border: none;
+    text-align: end;
+    font-size: 16px;
+    font-weight: bold;
+    font-family: cursive;
+}
+
+.loguito {
+    width: var(--D);
+    height: var(--D);
+    border-radius: 50%;
+}

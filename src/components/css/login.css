@@ -1,0 +1,74 @@
+.login {
+    background-color: #4f1cdc;
+    border-radius: 1.7rem;
+    text-align: center;
+    margin: 0 auto;
+    margin-top: 1rem;
+    width: 17.2rem;
+    height: 24.5rem;
+}
+
+.login-container {
+    background-image: linear-gradient(#817eff, #7465ff, #6b63fd, #2f58ff, #0033ff);
+    border-radius: 1rem;
+    width: 15.8rem;
+    margin: 0 auto;
+    height: 22.5rem;
+    padding: 10px;
+}
+
+.imagen {
+    background-image: url("../../images/usuario.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 50%;
+    display: inline-block;
+    width: 120px;
+    height: 120px;
+}
+
+.usuario {
+    border: 2px solid black;
+    background-color: var(--blue);
+    border-radius: 100px;
+    margin: 0 auto;
+    margin-bottom: 0.2rem;
+    padding: 0.2rem;
+    width: 14rem;
+}
+
+.usuario #usuario-caja {
+    background-color: var(--blue);
+    border: none;
+    color: white;
+    font-family: monospace;
+    font-size: 14px;
+    outline: none;
+    width: 12rem;
+}
+
+.contraseña {
+    border: 2px solid black;
+    background-color: var(--blue);
+    border-radius: 100px;
+    margin: 0 auto;
+    padding: 0.2rem;
+    width: 14rem;
+}
+
+.contraseña #contraseña-caja {
+    background-color: var(--blue);
+    border: none;
+    color: white;
+    font-family: monospace;
+    font-size: 14px;
+    outline: none;
+    width: 12rem;
+}
+
+.contraseña:hover,
+.usuario:hover {
+    box-shadow: 0px 0px 10px 5px #3668ff;
+    border-color: #dfe1e500;
+}
