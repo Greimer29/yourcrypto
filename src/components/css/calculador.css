@@ -26,7 +26,8 @@
     background-color: aliceblue;
 }
 
-input {
+.input-value,
+.input-price {
     outline: none;
     max-width: 12rem;
     border: none;

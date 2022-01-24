@@ -7,12 +7,12 @@ class CryptoList extends Component {
   render() {
     return (
       <div className="container list-container py-2">
-        <table className="me-3 ms-3">
-          <th>Num</th>
-          <th>Name</th>
-          <th>Price</th>
-          <th>Actions</th>
-        </table>
+        <div className="mx-2 d-flex">
+          <h6 className="me-5 ">Num</h6>
+          <h6 className="me-5 ms-4 ">Name</h6>
+          <h6 className="me-5 ms-5 ">Price</h6>
+          <h6 className="me-5 align-self-sm-end ">Actions</h6>
+        </div>
         {this.props.cryptoList.map((crypto) => {
           return (
             <Cryptos
@@ -21,6 +21,7 @@ class CryptoList extends Component {
               nombre={crypto.name}
               apellido={crypto.symbol}
               biyuyos={`$${crypto.quote.USD.price.toFixed(2)}`}
+              logo={crypto.logo}
             />
           );
         })}

@@ -15,7 +15,7 @@ class Login extends Component {
               <input type="text" id="usuario-caja" />
             </div>
             <h4>Contraseña</h4>
-            <div class="contraseña">
+            <div className="contraseña">
               <input type="password" id="contraseña-caja" />
             </div>
             <Link className="btn btn-success px-3 mt-3" to="/home">
