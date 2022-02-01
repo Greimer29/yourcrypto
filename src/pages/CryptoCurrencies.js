@@ -1,33 +1,42 @@
 import React, {Component} from "react";
 import CryptoCalculador from "../components/CryptoCalculador";
 import Fallo from "../components/Fallo";
+import CryptoInfo from "../components/CryptoInfo";
 
 class CryptoCurrencies extends Component{
     constructor(){
         super();
         this.state = {
-            data: {},
+            data:{
+                BTC:{
+                }
+            },
             loading: true,
             error: false
         }
     }
 
     componentDidMount(){
-        // this.fetchCrypto();
+        let apiKey = "ec710db3-a965-4b01-8445-c7ce2dc3c0b3";
+        let qString = "?CMC_PRO_API_KEY=" + apiKey + "&symbol=BTC";
+        let url = "https://pro-api.coinmarketcap.com/v1/cryptocurrency/info"
+
+        this.fetchCrypto(url,qString);
     }
 
-    fetchCrypto = (url,qRstring) =>{
+    fetchCrypto = (url,qString) => {
         try {
-            fetch(url,qRstring)
-                .then(data => data.json)
+            fetch(url + qString)
+                .then(resp => resp.json())
                 .then(data => {
                     this.setState({
-                        data,
+                        data:data.data,
                         loading:false,
-                        error:false
+                        error:null
                     })
+                    console.log(this.state.data)
                 })
-                .catch(err =>{
+                .catch(err => {
                     this.setState({
                         loading:false,
                         error:err
@@ -39,32 +48,19 @@ class CryptoCurrencies extends Component{
                 error
             })
         }
-    }
+        
+    } 
 
     render(){
         if(this.state.error){
             return <Fallo error={this.state.error.message}/>
         }
-
+        
         return(
             <React.Fragment>
-                <div className="container d-flex">
-                    <div className="container d-flex">
-                        <div className="container">
-                            <img src="" alt=""/>
-                            <span></span>
-                        </div>
-                        <div className="container">
-                            <h5>aja</h5>
-                            <h1>aja</h1>
-                        </div>
-                    </div>
-                    <div className="container">
-                        <h1>AJAAA</h1>
-                    </div>
-                </div>
+                <CryptoInfo cryptoInfo={this.state.data.BTC}/>
                 <hr/>
-                <CryptoCalculador data={this.state.data}/>
+                <CryptoCalculador crypto={this.state.data.BTC}/>
             </React.Fragment>
         )
     }
