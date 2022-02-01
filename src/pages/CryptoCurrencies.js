@@ -7,7 +7,10 @@ class CryptoCurrencies extends Component{
     constructor(){
         super();
         this.state = {
-            data:{},
+            data:{
+                BTC:{
+                }
+            },
             loading: true,
             error: false
         }
@@ -15,30 +18,38 @@ class CryptoCurrencies extends Component{
 
     componentDidMount(){
         let apiKey = "ec710db3-a965-4b01-8445-c7ce2dc3c0b3";
-        let qString = "?CMC_PRO_API_KEY=" + apiKey + "&id=1";
+        let qString = "?CMC_PRO_API_KEY=" + apiKey + "&symbol=BTC";
         let url = "https://pro-api.coinmarketcap.com/v1/cryptocurrency/info"
 
         this.fetchCrypto(url,qString);
     }
 
-    fetchCrypto = async (url,qString) =>{
+    fetchCrypto = (url,qString) => {
         try {
-            const resp = await fetch(url + qString);
-            const {data} = await resp.json();
-            
-            this.setState({
-                data,
-                error:false,
-                loading:false
-            })
-            console.log(this.state.data[1].name)
+            fetch(url + qString)
+                .then(resp => resp.json())
+                .then(data => {
+                    this.setState({
+                        data:data.data,
+                        loading:false,
+                        error:null
+                    })
+                    console.log(this.state.data)
+                })
+                .catch(err => {
+                    this.setState({
+                        loading:false,
+                        error:err
+                    })
+                })
         } catch (error) {
             this.setState({
                 loading:false,
                 error
             })
         }
-    }
+        
+    } 
 
     render(){
         if(this.state.error){
@@ -47,10 +58,9 @@ class CryptoCurrencies extends Component{
         
         return(
             <React.Fragment>
-                {console.log(this.state)}
-                <CryptoInfo cryptoInfo={this.state.data[1]}/>
+                <CryptoInfo cryptoInfo={this.state.data.BTC}/>
                 <hr/>
-                <CryptoCalculador crypto={this.state.data[1]}/>
+                <CryptoCalculador crypto={this.state.data.BTC}/>
             </React.Fragment>
         )
     }
