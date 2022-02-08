@@ -14,7 +14,7 @@ function CryptoInfo(props){
                 </div>
             </div>
             <div className="container">
-                <h1>${props.quotes.quote.USD.price.toFixed(2)}</h1>
+                <h1>${props.quotes.quote.USD.price}</h1>
             </div>
         </div>
     )
